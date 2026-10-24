@@ -250,10 +250,3 @@ Development is actively ongoing, and the framework is expected to receive substa
 
 The current release should therefore be considered an evolving exploratory research framework rather than a finalized cosmological model.
 
-
-SHA-512
-9c163bafda4a0bb48a26137206df493f350d27bedf90ccbf84b6fc364c9bc7e1c6bed825ffd5ff44d091d87a7af004bc57e2ecd7a1a828ccd61ce39aabd592f8
-
-
-
-
