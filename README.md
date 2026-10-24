@@ -250,3 +250,5 @@ Development is actively ongoing, and the framework is expected to receive substa
 
 The current release should therefore be considered an evolving exploratory research framework rather than a finalized cosmological model.
 
+# Major Revisions
+A major update will be coming in 12 to 96 hours.
