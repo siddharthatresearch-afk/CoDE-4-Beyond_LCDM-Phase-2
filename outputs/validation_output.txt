@@ -1,105 +1,123 @@
---- BBN EXPANSION TEST ---
-H_model / H_LCDM = 1.00000
-Deviation = 0.000%
-BBN status: Consistent 
+============================================================================
+CoDE4 ENGINE - RAW PREDICTIONS AND ABSOLUTE DIFFERENCES
+Comparison tables show model, reference, and absolute differences.
+==============================================================================
 
---- CMB DAMPING-TAIL TEST ---
-z= 800: deviation =  0.000%
-z=1100: deviation =  0.000%
-z=1500: deviation =  0.000%
-z=2000: deviation =  0.000%
-z=3000: deviation =  0.000%
+[MODEL INPUT AND INDEPENDENT OMEGA_M FIT]
+Pantheon+ non-calibrator SNe used:            1580
+Pantheon+ redshift range:                     0.01016 to 2.26137
+CoDE4 Omega_m fitted in this run:             0.32917 (epsilon fixed at 0.050)
+Fit uses m_b_corr, full released covariance, and a profiled free magnitude intercept.
+No SH0ES H0 target, Planck prior, or BAO likelihood enters this Omega_m fit.
+Pantheon+ bias-correction simulations used their published fiducial cosmology.
 
-Consistency Status: Consistent  (Deviations < 1%)
+[SH0ES THREE-RUNG LADDER: MODEL EQUATIONS AND REFIT]
+For each Hubble-flow SN: d_L(z)=(1+z)(c/H0) integral_0^z dz'/E(z').
+Its model-vs-fiducial magnitude correction is Delta_mu=5 log10[f_CoDE(z)/f_fid(z)].
+Only the 277 Hubble-flow RHS entries are corrected; anchor, Cepheid, and calibrator rows stay as released.
+With A=L^T and the released full covariance C, solve q=(A^T C^-1 A)^-1 A^T C^-1 y_model.
+The released ladder parameterization gives H0=10^(q[46]/5); this refit has no CMB prior and no H0 target.
+Fitted ladder component q[46], baseline:       9.31788763
+Fitted ladder component q[46], CoDE:           9.31462383
 
---- FIRST ACOUSTIC PEAK TEST ---
-Acoustic scale ell_A = 302.36
-Predicted l1 = 220.72
-Observed Planck value ≈ 220.6
-Deviation = 0.06%
+[LOCAL HUBBLE CONSTANT - FULL SH0ES THREE-RUNG REFIT]
+Baseline SH0ES matrix H0 recovery:            73.0428 km/s/Mpc
+CoDE local-ladder H0 fit:                      72.9331 km/s/Mpc
+Absolute change from baseline ladder fit:      -0.1097 km/s/Mpc
+H0 is fitted from the released anchor-Cepheid-calibrator-SN-Hubble-flow ladder; no CMB prior enters.
+Held-fixed local expansion-shape inputs:       Omega_m=0.32917, eps=0.0500
+Omega_m source: unanchored Pantheon+ SN-only CoDE4 fit; no SH0ES H0 or CMB prior used in that fit.
+Hubble-flow match zero-point offset:             +0.0075 mag
+Hubble-flow match residual after offset removal:  RMS=0.0020 mag; max=0.0106 mag
+The SH0ES matrix omits SN identifiers; Pantheon+ rows are associated by matching the fiducial RHS values.
+Hubble-flow residual RMS, baseline -> CoDE:       0.1350 -> 0.1351 mag
+Forward SH0ES-style H0 from model distance scale: 66.5107 km/s/Mpc (inherits the model's CMB-calibrated global H0)
+Legacy weighted correction applied to 73.04 input: 72.8665 km/s/Mpc (SH0ES-anchored diagnostic)
 
---- fσ8(z) STRUCTURE GROWTH TEST ---
-z=0.0  ->  fσ8 = 0.4295
-z=0.5  ->  fσ8 = 0.4760
-z=1.0  ->  fσ8 = 0.4327
-z=1.5  ->  fσ8 = 0.3749
+[COMPRESSED CMB SCALES - PLANCK 2018 REFERENCES]
+Observable                                        Model   Planck reference     Difference
+Global H0 from theta* calibration               66.3527              67.36        -1.0073
+100 theta* proxy                                1.04199             1.0411   +0.000888314
+Shift parameter R                               1.75597             1.7502    +0.00576988
+Acoustic scale l_A                                301.5            301.471     +0.0287971
+Recombination redshift z*                       1086.36            1089.92       -3.55652
+Sound horizon r_s(z*) [Mpc]                     144.089             144.43       -0.34065
+Comoving distance D_M(z*) [Mpc]                 13828.3            13893.3       -65.0245
+Drag sound horizon r_d [Mpc]                    146.314             147.09      -0.775594
+Physical baryon density omega_b                 0.02241            0.02236         +5e-05
+Diffusion scale k_D [1/Mpc]                    0.139736           0.139063   +0.000672983
+Damping angle theta_D                       0.000517516        0.000517586   -7.06404e-08
+First acoustic peak proxy ell_1                 220.634            220.492      +0.142441
+These are compressed background scales, not Planck TT/TE/EE power-spectrum predictions.
+The global H0 shown above is obtained by matching the model to the Planck acoustic-angle target.
 
---- ISW EFFECT TEST ---
-z=0.0  ->  dPhi/dln(a) = -0.470545 | DECAYING (Standard) 
-z=0.5  ->  dPhi/dln(a) = -0.271913 | DECAYING (Standard) 
-z=1.0  ->  dPhi/dln(a) = -0.144648 | DECAYING (Standard) 
-z=2.0  ->  dPhi/dln(a) = -0.046460 | DECAYING (Standard) 
+[BAO - DESI DR2 MEASUREMENTS]
+Observable                                     Model   DESI reference     Difference
+BGS z=0.295 D_V/r_d                         8.178817         7.941676      +0.237141
+LRG1 z=0.510 D_M/r_d                       13.692073        13.587584      +0.104488
+LRG1 z=0.510 D_H/r_d                       22.944534        21.862947      +1.081587
+LRG2 z=0.706 D_M/r_d                       17.924935        17.350691      +0.574245
+LRG2 z=0.706 D_H/r_d                       20.302675        19.455349      +0.847326
+LRG3+ELG1 z=0.934 D_M/r_d                  22.242990        21.575640      +0.667350
+LRG3+ELG1 z=0.934 D_H/r_d                  17.650049        17.641495      +0.008555
+ELG2 z=1.321 D_M/r_d                       28.351056        27.600856      +0.750199
+ELG2 z=1.321 D_H/r_d                       14.099181        14.176022      -0.076841
+QSO z=1.484 D_M/r_d                        30.549661        30.511901      +0.037760
+QSO z=1.484 D_H/r_d                        12.903492        12.817000      +0.086492
+Ly-alpha z=2.330 D_H/r_d                    8.616337         8.631546      -0.015209
+Ly-alpha z=2.330 D_M/r_d                   39.464123        38.988974      +0.475149
+DESI is the Dark Energy Spectroscopic Instrument; this is its 13-observable DR2 BAO vector.
 
-Result: Potential decay at low-z is consistent with Dark Energy dominance.
+[SUPERNOVA DISTANCE SHAPE - PANTHEON+]
+Pantheon+ release table rows:                1701
+Non-calibrator Hubble-flow SNe used:          1580  (zHD=0.0102-2.2614)
+Median offset-removed magnitude residual:      -0.00489 mag
+Mean offset-removed magnitude residual:        -0.00842 mag
+RMS offset-removed magnitude residual:         0.15332 mag
+Per-supernova residuals saved to:              /content/pantheon_plus_residuals.csv
+The released full covariance removes one common magnitude intercept; no fit score is formed.
+This same Pantheon+ Hubble-flow sample supplied Omega_m, so this is an in-sample shape check, not a holdout validation.
 
---- CMB SHIFT PARAMETER TEST ---
-Model R-parameter = 1.75002
-Planck 2018 Target = 1.7502 ± 0.0046
-Shift Parameter: Consistent 
+[BBN AND MATTER-RADIATION EQUALITY]
+Physical baryon density omega_b:               0.0224100
+BBN D/H reference omega_b:                     0.0224100
+BBN H^2(model)/H^2(standard) at 1 MeV:         1.000000000000e+00
+BBN implied Delta N_eff proxy:                  +0.00000000e+00
+Matter-radiation equality z_eq:                 3463.21898
+Matter-radiation equality k_eq:                 1.05697738e-02 1/Mpc
 
---- SIGMA 8 TRUE MODEL PREDICTION ---
-Model Growth Boost: 1.0103x
-Predicted σ8(today) = 0.8194
-Standard Planck Target = 0.811
-Clumping Status: ALIGNED 
+[MATTER POWER, GROWTH, RSD, AND WEAK LENSING]
+Matter-power turnover k_peak:                  1.11817064e-02 1/Mpc (1.68519248e-02 h/Mpc)
+Matter-power raw peak P(k_peak):               8.38776538e+04 Mpc^3
+sigma8 raw pipeline output:                    0.84908236
+sigma8 calibrated to Planck amplitude:          0.82728891
+Amplitude calibration uses Planck sigma8 for normalization; shape/growth remain model-derived.
+Raw growth amplitude D(a=1), M-normalized:      8.04398410e-01
+Growth amplitude D(z=0)/D(0):                 1.00000000
+Growth amplitude D(z=0.5)/D(0):                 0.76413322
+Growth amplitude D(z=1)/D(0):                 0.60080584
+Growth amplitude D(z=2)/D(0):                 0.41160843
+Growth amplitude D(z=10)/D(0):                 0.11343290
+Growth-index gamma fit over z=[0,1]:           0.541673
+Growth-index distance from 0.55, in 0.05 units: 0.166531
+S8 = sigma8*sqrt(Omega_m/0.3):                 0.866576
+f*sigma8 z=0.067 (6dFGS):                    0.464853 (reference 0.423000; difference +0.041853)
+f*sigma8 z=0.150 (SDSS-MGS):                    0.478931 (reference 0.490000; difference -0.011069)
+f*sigma8 z=0.380 (BOSS DR12):                    0.493184 (reference 0.497000; difference -0.003816)
+f*sigma8 z=0.510 (BOSS DR12):                    0.489478 (reference 0.458000; difference +0.031478)
+f*sigma8 z=0.610 (BOSS DR12):                    0.482852 (reference 0.436000; difference +0.046852)
+f*sigma8 z=0.700 (eBOSS LRG):                    0.474913 (reference 0.473000; difference +0.001913)
+f*sigma8 z=1.480 (eBOSS QSO):                    0.383009 (reference 0.462000; difference -0.078991)
+ISW potential-decay proxy dPhi/dln(a), z=0.0: -4.07759106e-01
+ISW potential-decay proxy dPhi/dln(a), z=0.5: -2.19912500e-01
+ISW potential-decay proxy dPhi/dln(a), z=1.0: -1.10033822e-01
+ISW potential-decay proxy dPhi/dln(a), z=2.0: -2.94290986e-02
+S8 comparison Planck 2018: model 0.86658, reference 0.83200, difference +0.03458
+S8 comparison DES Y3 3x2pt: model 0.86658, reference 0.77600, difference +0.09058
+S8 comparison KiDS-Legacy: model 0.86658, reference 0.81500, difference +0.05158
+S8 comparison DES+KiDS-1000: model 0.86658, reference 0.79000, difference +0.07658
 
---- GROWTH INDEX GAMMA TEST ---
-z=0.0  ->  gamma = 0.5502
-z=0.5  ->  gamma = 0.5368
-z=1.0  ->  gamma = 0.5227
+[AGE OF THE UNIVERSE]
+Age today:                                       13.821125 Gyr
 
-Expected ΛCDM value ≈ 0.545
-
---- MATTER–RADIATION EQUALITY TEST ---
-z_eq = 3499.00
-Expected range: 3200 – 3600  (plank-like)
-
---- MATTER POWER SPECTRUM TURNOVER TEST ---
-Equality redshift z_eq = 3499.00
-Turnover scale k_eq = 0.01141 Mpc^-1
-Turnover scale k_eq = 0.01566 h/Mpc
-Theoretical expectation ≈ 0.01675 h/Mpc
-Deviation = 6.51%
-Turnover status: Noticeable deviation
-
---- S8 WEAK-LENSING TEST ---
-Predicted sigma8 = 0.8194
-Predicted S8 = 0.8396
-
-Observed range ≈ 0.76 – 0.79
-S8 status: PLANCK-LIKE 
-Derived H0: 72.86 km/s/Mpc
-Sound Horizon r_s: 133.2989 Mpc
-Theta*: 1.039016e-02
-
---- CMB ---
-Comoving Distance z=1100: 12829.33 Mpc
-
---- SUPERNOVA ---
-z=0.1, mu=38.2244
-z=0.5, mu=42.1595
-z=1.0, mu=43.9905
-
---- BAO ---
-z=0.35, D_V=1040.95 Mpc
-z=0.57, D_V=1408.49 Mpc
-
---- AGE ---
-Age today: 12.7503 Gyr
-
---- SIGMA 8 (RAW MODEL OUTPUT) ---
-Raw amplitude today: 0.422325
-z= 7, raw growth=0.066581
-z=10, raw growth=0.048398
-z=12, raw growth=0.040949
-z=15, raw growth=0.033295
-
---- HUBBLE TENSION TEST ---
-Planck ΛCDM H0: 67.40
-Local SH0ES H0: 73.04
-Model derived H0: 72.86
-
-Standard ΛCDM Tension: 4.89 σ
-Your Model Tension: 0.17 σ
-Conclusion: HUBBLE TENSION MINIMIZED
-======================================================================
+==============================================================================
