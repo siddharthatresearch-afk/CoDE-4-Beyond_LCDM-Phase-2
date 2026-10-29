@@ -1,43 +1,83 @@
-==============================================================================
-      CoDE-4 JWST EXTENSION : RESULTS MATRIX
-==============================================================================
+======================================================================================
+JADES-GS-z14-0 - COSMOLOGY, MASS-SCALING, AND AGE AUDIT
+No previous Python pipeline is imported; all calculations are in this file.
+Target redshift: 14.1793; stellar ages shown are assumptions, not measured formation times.
+======================================================================================
 
-[ GEOMETRIC LUMINOSITY-DISTANCE SECTOR ]
-------------------------------------------------------------------------------
-Inferred Stellar Mass Reduction : 14.55%
+[MODEL INPUTS]
+Legacy CoDE4 H0 input: 72.86 km/s/Mpc; epsilon=0.050; beta=0.050
+Legacy fixed Omega_m fractions: LCDM=0.31500, CoDE4=0.31500
+Active engine scenarios: Omega_m=0.32917, omega_b(BBN)=0.02241;
+  H0 local-ladder=72.9331 and theta*-calibrated=66.3528 km/s/Mpc are shown separately.
+Gas Jeans illustration: T=10000 K, mu=1.22; assumed, not fitted to GS-z14-0
+Illustrative reference stellar mass: 10^8.6 Msun; mass is SED-model dependent
 
-[ MATTER POWER SPECTRUM SECTOR ]
-------------------------------------------------------------------------------
-Turnover Deviation Shift        : 6.51%
-Modified Equality Scale         : 0.01566 h/Mpc
+[DISTANCE, AGE, AND THE D_L^2 MASS RESCALING]
+Model                                        H0   Omega_m     D_L [Mpc]    Age [Myr]     M*/M*_LCDM
+----------------------------------------------------------------------------------------------------
+LCDM baseline                            67.400   0.31500    156926.325      289.543       1.000000
+CoDE4 epsilon only                       67.400   0.31500    156816.081      289.543       0.998595
+CoDE4 legacy local-H0 fractions          72.860   0.31500    145064.560      267.845       0.854537
+CoDE4 fixed physical densities           72.860   0.26956    153607.718      289.536       0.958152
+CoDE4 active local-ladder H0             72.933   0.32917    142593.147      262.069       0.825668
+CoDE4 active theta*-calibrated H0        66.353   0.32917    156719.336      287.771       0.997364
+Mass scaling assumes identical observed flux, SED, lensing, dust, and IMF treatment; it is not a refit of the JWST photometry.
+CoDE4 epsilon only: illustrative M* = 3.975e+08 Msun (from 3.981e+08 Msun under LCDM)
+CoDE4 legacy local-H0 fractions: illustrative M* = 3.402e+08 Msun (from 3.981e+08 Msun under LCDM)
+CoDE4 fixed physical densities: illustrative M* = 3.814e+08 Msun (from 3.981e+08 Msun under LCDM)
+CoDE4 active local-ladder H0: illustrative M* = 3.287e+08 Msun (from 3.981e+08 Msun under LCDM)
+CoDE4 active theta*-calibrated H0: illustrative M* = 3.971e+08 Msun (from 3.981e+08 Msun under LCDM)
+The epsilon-only case isolates the modifier. The legacy local-H0 case also changes the physical matter density because Omega_m is held fixed.
+The fixed-physical-density control shows why changing H0 while holding Omega_m fixed is not an innocuous normalization change.
 
-[ JEANS COMPACTION SECTOR ]
-------------------------------------------------------------------------------
-Native Jeans Threshold Deflation : 7.49%
-Nonlinear Compaction Scaling     : 0.8557
+[AVAILABLE COSMIC TIME UNDER STELLAR-AGE ASSUMPTIONS]
+Assumed stellar population age = 20.0 Myr
+  LCDM baseline                         : cosmic age= 289.543 Myr; implied onset time= 269.543 Myr after Big Bang
+  CoDE4 legacy local-H0 fractions       : cosmic age= 267.845 Myr; implied onset time= 247.845 Myr after Big Bang
+  CoDE4 fixed physical densities        : cosmic age= 289.536 Myr; implied onset time= 269.536 Myr after Big Bang
+  CoDE4 active local-ladder H0          : cosmic age= 262.069 Myr; implied onset time= 242.069 Myr after Big Bang
+  CoDE4 active theta*-calibrated H0     : cosmic age= 287.771 Myr; implied onset time= 267.771 Myr after Big Bang
+Assumed stellar population age = 90.0 Myr
+  LCDM baseline                         : cosmic age= 289.543 Myr; implied onset time= 199.543 Myr after Big Bang
+  CoDE4 legacy local-H0 fractions       : cosmic age= 267.845 Myr; implied onset time= 177.845 Myr after Big Bang
+  CoDE4 fixed physical densities        : cosmic age= 289.536 Myr; implied onset time= 199.536 Myr after Big Bang
+  CoDE4 active local-ladder H0          : cosmic age= 262.069 Myr; implied onset time= 172.069 Myr after Big Bang
+  CoDE4 active theta*-calibrated H0     : cosmic age= 287.771 Myr; implied onset time= 197.771 Myr after Big Bang
+An onset time is not a formation-timescale requirement; a star-formation history is needed for that.
 
-[ GROWTH REFINEMENT SECTOR ]
-------------------------------------------------------------------------------
-Sigma-8 Growth Amplification : 1.0103
+[MATTER-RADIATION EQUALITY AND LINEAR GROWTH]
+LCDM baseline: z_eq=3350.064, k_eq=1.033001e-02 1/Mpc, k_eq=1.532643e-02 h/Mpc
+  Equality mass scale=4.6795e+18 Msun; D(z_target)/D(0)=0.08383407; D(z_target)=6.60707475e-02
+CoDE4 epsilon only: z_eq=3350.064, k_eq=1.033001e-02 1/Mpc, k_eq=1.532643e-02 h/Mpc
+  Equality mass scale=4.6795e+18 Msun; D(z_target)/D(0)=0.08308923; D(z_target)=6.61600324e-02
+CoDE4 legacy local-H0 fractions: z_eq=3350.064, k_eq=1.116683e-02 1/Mpc, k_eq=1.532643e-02 h/Mpc
+  Equality mass scale=4.3289e+18 Msun; D(z_target)/D(0)=0.08308923; D(z_target)=6.61600324e-02
+CoDE4 fixed physical densities: z_eq=3350.064, k_eq=1.033001e-02 1/Mpc, k_eq=1.417789e-02 h/Mpc
+  Equality mass scale=4.6795e+18 Msun; D(z_target)/D(0)=0.08619052; D(z_target)=6.61582067e-02
+CoDE4 active local-ladder H0: z_eq=4184.831, k_eq=1.277085e-02 1/Mpc, k_eq=1.751037e-02 h/Mpc
+  Equality mass scale=3.0303e+18 Msun; D(z_target)/D(0)=0.08220410; D(z_target)=6.61210324e-02
+CoDE4 active theta*-calibrated H0: z_eq=3463.582, k_eq=1.057034e-02 1/Mpc, k_eq=1.593052e-02 h/Mpc
+  Equality mass scale=4.4233e+18 Msun; D(z_target)/D(0)=0.08224036; D(z_target)=6.61540136e-02
+Legacy-normalized CoDE4/LCDM linear growth at z=14.1793: 1.00135135
+This is computed from the growth ODE; it replaces the hard-coded 1.0103 multiplier.
 
-[ COSMIC TIMELINE COMPARISON ]
-------------------------------------------------------------------------------
-LCDM Cosmic Age @ z=14.18      : 289.39 Myr
-CoDE-4 Cosmic Age @ z=14.18    : 267.71 Myr
-LCDM Available Formation Window : 199.39 Myr
-CoDE-4 Available Formation Window : 177.71 Myr
+[GAS JEANS SCALE - EXPLICIT THERMAL ASSUMPTION]
+LCDM baseline: M_J=1.2375e+09 Msun
+CoDE4 legacy local-H0 fractions: M_J=1.1448e+09 Msun
+CoDE4 fixed physical densities: M_J=1.2375e+09 Msun
+CoDE4 active local-ladder H0: M_J=1.2333e+09 Msun
+CoDE4 active theta*-calibrated H0: M_J=1.2333e+09 Msun
+Legacy fixed-fraction Jeans-mass ratio CoDE4/LCDM: 0.925062
+The previous expression omitted c_s^3 and therefore was not an absolute Jeans mass. This corrected scale is only illustrative because gas temperature and density structure are unspecified.
 
-[ REQUIRED FORMATION WINDOW ]
-------------------------------------------------------------------------------
-Standard LCDM Requirement : 600.00 Myr
-CoDE-4 Adjusted Requirement : 354.65 Myr
+[LEGACY FORMULA REPRODUCTION - AUDIT ONLY]
+Legacy heuristic required time:              354.65 Myr
+Legacy LambdaCDM residual gap:                400.46 Myr
+Legacy CoDE4 residual gap:                    176.80 Myr
+Legacy gap reduction from formula:            0.5585 (unitless fraction)
+This is not a derived collapse-time prediction: the mass exponent, growth multiplier, and equality-scale multiplier were stipulated, not inferred from a calibrated galaxy-formation model.
 
-[ RESIDUAL FORMATION GAP ]
-------------------------------------------------------------------------------
-LCDM Residual Formation Gap : 400.61 Myr
-CoDE-4 Residual Formation Gap : 176.94 Myr
-
-[ INTERPRETATION ]
-------------------------------------------------------------------------------
-CoDE-4 demonstrates substantial reduction in early JWST formation pressure through coordinated expansion-growth evolution.
-The framework combines geometric mass reduction, equality modification, nonlinear Jeans compaction, and mild growth-sector amplification within a bounded phenomenological cosmology.
+[INTERPRETATION]
+The D_L^2 rescaling can lower an inferred stellar mass under the same SED assumptions. It does not, by itself, halve a cosmological formation-time tension.
+In the legacy fixed-Omega_m comparison, the higher H0 makes the z~14 universe younger; the epsilon modification is small there.
+A defensible abundance/tension claim needs halo abundance, survey volume/completeness, stellar-to-halo efficiency, and a self-consistent star-formation history.logy.
