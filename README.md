@@ -251,5 +251,29 @@ Development is actively ongoing, and the framework is expected to receive substa
 The current release should therefore be considered an evolving exploratory research framework rather than a finalized cosmological model.
 
 # Major Revisions
-A major update will be coming in 12 to 96 hours.(Due to computational issues the update couldn’t be updated we will rectify the issues and update as soon possible mostly within 24 hours)
+A major update has taken place in our engine .py
+
+### 📥 Pre-downloading Datasets
+
+Run the following command in your terminal to create and execute the download script:
+
+```bash
+import os
+
+try:
+    print('Downloading Pantheon+ datasets...')
+    table_path, cov_path = _pantheon_plus_paths()
+    print(f'Pantheon+ files ready: {table_path.name}, {cov_path.name}')
+    
+    print('\nDownloading SH0ES ladder fits files...')
+    _ = shoes_full_ladder_local_refit(Om=0.3, eps=0.05)
+    print('SH0ES ladder files successfully downloaded and verified!')
+except Exception as e:
+    print(f'Encountered error during download: {e}')
+
+
+python3 download_data.py
+```
+
+
 
