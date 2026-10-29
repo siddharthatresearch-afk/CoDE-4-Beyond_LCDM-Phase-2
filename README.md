@@ -251,7 +251,7 @@ Development is actively ongoing, and the framework is expected to receive substa
 The current release should therefore be considered an evolving exploratory research framework rather than a finalized cosmological model.
 
 # Major Revisions
-A major update has taken place in our engine .py
+A major update has taken place in our engine.py and jwst engine further updates on the rest of repository will role in stages
 
 ### 📥 Pre-downloading Datasets
 
